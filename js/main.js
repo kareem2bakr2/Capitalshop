@@ -13,6 +13,25 @@ let gallery2=document.getElementById("gall2");
 let scrollbtnright2=document.getElementById("scrollbtnright2");
 let scrollbtnleft2=document.getElementById("scrollbtnleft2");
 let animationloop=document.querySelectorAll("#last .row >div");
+window.addEventListener('scroll', function() {
+    if (document.documentElement.scrollTop > 270 || document.body.scrollTop > 270) {
+        console.log("Scrolled past 270px");
+    }
+    if (document.documentElement.scrollTop > 2700 || document.body.scrollTop > 2700) {
+        console.log("Scrolled past 2700px");
+        
+        for (var i = 0; i < animationloop.length; i++) {
+            animationloop[i].style.cssText = `
+                animation-name: down_up;
+                animation-duration: 1s;
+                animation-delay: ${0.25 * i}s;
+            `;
+        }
+    }
+});
+
+
+
 function printdata(dataArr,goPrint){
     var gall1=``;
     for(let i=0;i<dataArr.length;i++){
@@ -67,7 +86,8 @@ if(gall2.status == 200 && gall2.readyState ==4){
 }
 
 function changePhoto(){
-    if (bannerPhoto.src=="http://127.0.0.1:5500/Images/asset%2042.jpeg"){
+    
+    if (bannerPhoto.src=="file:///D:/U/Frontend/Projects/04-Capitalshop/Images/asset%2042.jpeg"){
         bannerPhoto.src="Images/asset 43.jpeg";
         bannerPhoto.style.cssText=`object-position: 40% 100%;`;
 
@@ -79,7 +99,7 @@ function changePhoto(){
     else{
         bannerPhoto.src="Images/asset 42.jpeg";
         onBanner.classList.remove("right5");
-        bannerPhoto.style.cssText=`object-position: 60% 100%;`;
+        bannerPhoto.style.cssText=`object-position: 55% 100%;`;
 
 
         onBanner.classList.add("left5");
@@ -144,18 +164,3 @@ scrollbtnright2.onclick=function(){
     `translateX(${scale}px)`
     ;
 } 
-window.onscroll=function(){
-    if(document.body.scrollTop > 2700){
-        console.log("hhhhhhhhhhhhhhhh");
-        for (var i=0;i<animationloop.length;i++){
-            animationloop[i].style.cssText=`
-            animation-name:down_up;
-            animation-duration:1s;
-            animation-delay: ${0.25*i}s;
-            
-            `;
-    
-        }
-    
-    }
-}

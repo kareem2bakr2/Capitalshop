@@ -343,6 +343,7 @@ header .banner img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: 55% 100%;
 }
 header .banner .onBanner {
   position: absolute;
@@ -437,6 +438,9 @@ header .banner .next button:hover {
   }
   header #nav2 .parent {
     opacity: 1;
+  }
+  header .nav3 {
+    opacity: 0;
   }
 }
 @media (max-width: 850px) {
@@ -777,14 +781,14 @@ header .banner .next button:hover {
     line-height: 30px;
   }
   #TrendingThisWeek .up .container .left h5 {
-    font-size: 15px;
+    font-size: 13px;
   }
   #TrendingThisWeek .up .container .right ul .active {
     padding-bottom: 5px;
   }
   #TrendingThisWeek .up .container .right ul li {
-    padding: 0 5px;
-    font-size: 13px;
+    padding: 0 1px;
+    font-size: 12px;
     font-weight: 600;
   }
   #TrendingThisWeek .down .d-flex > div ul {
@@ -800,7 +804,7 @@ header .banner .next button:hover {
 #testimoial {
   background-color: #F3EAD8;
   height: 450px;
-  padding: 20px 50px;
+  padding: 20px 0px;
 }
 #testimoial .slider {
   color: #000;
@@ -1158,28 +1162,33 @@ footer .down i {
   padding: 0 5px;
   text-decoration: line-through;
 }
-#category .right .col-md-6 ul {
+#category .right .col-md-6 .onphoto {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  left: 0;
+}
+#category .right .col-md-6 .onphoto ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  position: absolute;
-  bottom: 110px;
-  left: 60px;
+  height: inherit;
+  line-height: inherit;
   background-color: #ddd;
   display: none;
   transition: all 5s;
 }
-#category .right .col-md-6 ul li {
+#category .right .col-md-6 .onphoto ul li {
   display: inline-block;
   padding: 15px;
   transition: background-color 0.5s;
 }
-#category .right .col-md-6 ul li:hover {
+#category .right .col-md-6 .onphoto ul li:hover {
   background-color: #FF2020;
   color: white;
 }
 #category .right .col-md-6:hover ul {
-  display: inline;
+  display: inline-block;
 }
 #category .right .col-md-6:hover img {
   transform: scale(1.1, 1.1);
@@ -1255,60 +1264,56 @@ footer .down i {
   z-index: 1000;
 }
 
-@media (max-width: 1400px) {
-  #category .right .col-md-6 ul {
-    left: 40px;
-  }
-}
 @media (max-width: 1200px) {
-  #category .right .col-md-6 ul {
-    left: 60px;
+  #category .right .col-md-6 .onphoto {
+    bottom: 25%;
+    width: 90%;
+    left: 5%;
   }
-  #category .right .col-md-6 ul li {
-    font-size: 13px;
-    padding: 5px;
+  #category .right .col-md-6 .onphoto ul li {
+    display: inline-block;
+    padding: 10px;
   }
 }
 @media (max-width: 767px) {
-  #category .right .col-md-6 ul {
-    left: 135px;
+  #category .right .col-md-6 .onphoto {
+    bottom: 25%;
+    width: 90%;
+    left: 5%;
   }
-  #category .right .col-md-6 ul li {
-    font-size: 25px;
-    padding: 15px;
+  #category .right .col-md-6 .onphoto ul li {
+    display: inline-block;
+    padding: 15 20px;
   }
 }
-#blog, #blogdetail {
-  background-color: #FDFDFD;
-}
-#blog .title, #blogdetail .title {
+#blogsec .title, #blogdetail .title {
   margin-bottom: 30px;
   background-color: #F3EAD8;
   text-align: center;
   min-height: 100px;
   padding: 30px 0;
 }
-#blog .title h5, #blogdetail .title h5 {
+#blogsec .title h5, #blogdetail .title h5 {
   padding-bottom: 10px;
   font-size: 25px;
   margin: 0;
 }
-#blog .title a, #blogdetail .title a {
+#blogsec .title a, #blogdetail .title a {
   text-decoration: none;
   padding: 0 10px;
   color: #999;
 }
-#blog .title .borderRight, #blogdetail .title .borderRight {
+#blogsec .title .borderRight, #blogdetail .title .borderRight {
   border-right: solid 1px #ccc;
 }
-#blog .blogbody .col-md-8 .col-12, #blogdetail .blogbody .col-md-8 .col-12 {
+#blogsec .blogbody .col-md-8 .col-12, #blogdetail .blogbody .col-md-8 .col-12 {
   background-color: #FFFFFF;
   border: solid 1px #cccccc;
 }
-#blog .blogbody .col-md-8 .col-12 .image, #blogdetail .blogbody .col-md-8 .col-12 .image {
+#blogsec .blogbody .col-md-8 .col-12 .image, #blogdetail .blogbody .col-md-8 .col-12 .image {
   position: relative;
 }
-#blog .blogbody .col-md-8 .col-12 .image .over, #blogdetail .blogbody .col-md-8 .col-12 .image .over {
+#blogsec .blogbody .col-md-8 .col-12 .image .over, #blogdetail .blogbody .col-md-8 .col-12 .image .over {
   width: 100px;
   height: 100px;
   border-radius: 10px 0 10px 0;
@@ -1322,38 +1327,38 @@ footer .down i {
   left: 50px;
   transition: all 0.7s;
 }
-#blog .blogbody .col-md-8 .col-12 .image .over span, #blogdetail .blogbody .col-md-8 .col-12 .image .over span {
+#blogsec .blogbody .col-md-8 .col-12 .image .over span, #blogdetail .blogbody .col-md-8 .col-12 .image .over span {
   display: block;
 }
-#blog .blogbody .col-md-8 .col-12 .image .over:hover, #blogdetail .blogbody .col-md-8 .col-12 .image .over:hover {
+#blogsec .blogbody .col-md-8 .col-12 .image .over:hover, #blogdetail .blogbody .col-md-8 .col-12 .image .over:hover {
   color: #FF2020;
   background-color: white;
 }
-#blog .blogbody .col-md-8 .col-12 .content, #blogdetail .blogbody .col-md-8 .col-12 .content {
+#blogsec .blogbody .col-md-8 .col-12 .content, #blogdetail .blogbody .col-md-8 .col-12 .content {
   padding: 20px;
 }
-#blog .blogbody .col-md-8 .col-12 .content h5, #blogdetail .blogbody .col-md-8 .col-12 .content h5 {
+#blogsec .blogbody .col-md-8 .col-12 .content h5, #blogdetail .blogbody .col-md-8 .col-12 .content h5 {
   font-size: 25px;
   cursor: pointer;
 }
-#blog .blogbody .col-md-8 .col-12 .content h5:hover, #blogdetail .blogbody .col-md-8 .col-12 .content h5:hover {
+#blogsec .blogbody .col-md-8 .col-12 .content h5:hover, #blogdetail .blogbody .col-md-8 .col-12 .content h5:hover {
   color: #FF2020;
 }
-#blog .blogbody .col-md-8 .col-12 .content span, #blogdetail .blogbody .col-md-8 .col-12 .content span {
+#blogsec .blogbody .col-md-8 .col-12 .content span, #blogdetail .blogbody .col-md-8 .col-12 .content span {
   cursor: pointer;
   font-size: 15px;
   color: #4C4C4C;
 }
-#blog .blogbody .col-md-8 .col-12 .content .user, #blogdetail .blogbody .col-md-8 .col-12 .content .user {
+#blogsec .blogbody .col-md-8 .col-12 .content .user, #blogdetail .blogbody .col-md-8 .col-12 .content .user {
   border-right: 2px solid rgba(204, 204, 204, 0.8);
   padding-right: 5px;
   margin-right: 5px;
 }
-#blog .nextPrevBtn, #blogdetail .nextPrevBtn {
+#blogsec .nextPrevBtn, #blogdetail .nextPrevBtn {
   padding: 10px 0;
   text-align: center;
 }
-#blog .nextPrevBtn i, #blog .nextPrevBtn button, #blogdetail .nextPrevBtn i, #blogdetail .nextPrevBtn button {
+#blogsec .nextPrevBtn i, #blogsec .nextPrevBtn button, #blogdetail .nextPrevBtn i, #blogdetail .nextPrevBtn button {
   margin: 0 5px;
   font-size: 25px;
   border: solid 1px black;
@@ -1363,27 +1368,27 @@ footer .down i {
   color: #ff2020;
   transition: all 0.5s;
 }
-#blog .nextPrevBtn i:hover, #blog .nextPrevBtn button:hover, #blogdetail .nextPrevBtn i:hover, #blogdetail .nextPrevBtn button:hover {
+#blogsec .nextPrevBtn i:hover, #blogsec .nextPrevBtn button:hover, #blogdetail .nextPrevBtn i:hover, #blogdetail .nextPrevBtn button:hover {
   color: #fff;
   background-color: #ff2020;
 }
-#blog .col-md-4 .col-12, #blogdetail .col-md-4 .col-12 {
+#blogsec .col-md-4 .col-12, #blogdetail .col-md-4 .col-12 {
   background-color: #FBF9FF;
   border-radius: 10px;
 }
-#blog .col-md-4 .col-12 h6, #blogdetail .col-md-4 .col-12 h6 {
+#blogsec .col-md-4 .col-12 h6, #blogdetail .col-md-4 .col-12 h6 {
   border-bottom: solid 1px rgba(204, 204, 204, 0.5);
   padding-bottom: 10px;
   font-size: 25px;
   text-transform: capitalize;
   margin: 15px 0px;
 }
-#blog .col-md-4 .col-12 .search input, #blogdetail .col-md-4 .col-12 .search input {
+#blogsec .col-md-4 .col-12 .search input, #blogdetail .col-md-4 .col-12 .search input {
   outline: none;
   padding: 10px;
   width: 100%;
 }
-#blog .col-md-4 .col-12 .category a, #blogdetail .col-md-4 .col-12 .category a {
+#blogsec .col-md-4 .col-12 .category a, #blogdetail .col-md-4 .col-12 .category a {
   display: block;
   text-decoration: none;
   color: black;
@@ -1392,13 +1397,13 @@ footer .down i {
   padding: 12px 0;
   border-bottom: solid 1px rgba(204, 204, 204, 0.4);
 }
-#blog .col-md-4 .col-12 .category a:hover, #blogdetail .col-md-4 .col-12 .category a:hover {
+#blogsec .col-md-4 .col-12 .category a:hover, #blogdetail .col-md-4 .col-12 .category a:hover {
   color: #FF2020;
 }
-#blog .col-md-4 .col-12 .category :last-child, #blogdetail .col-md-4 .col-12 .category :last-child {
+#blogsec .col-md-4 .col-12 .category :last-child, #blogdetail .col-md-4 .col-12 .category :last-child {
   border: none;
 }
-#blog .col-md-4 .col-12 .recentPost a, #blogdetail .col-md-4 .col-12 .recentPost a {
+#blogsec .col-md-4 .col-12 .recentPost a, #blogdetail .col-md-4 .col-12 .recentPost a {
   display: block;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
@@ -1406,14 +1411,14 @@ footer .down i {
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#blog .col-md-4 .col-12 .recentPost a:hover, #blogdetail .col-md-4 .col-12 .recentPost a:hover {
+#blogsec .col-md-4 .col-12 .recentPost a:hover, #blogdetail .col-md-4 .col-12 .recentPost a:hover {
   color: #FF2020;
 }
-#blog .col-md-4 .col-12 .recentPost span, #blogdetail .col-md-4 .col-12 .recentPost span {
+#blogsec .col-md-4 .col-12 .recentPost span, #blogdetail .col-md-4 .col-12 .recentPost span {
   color: rgba(48, 26, 34, 0.5);
   font-size: 15px;
 }
-#blog .col-md-4 .col-12 .TagClouds button, #blogdetail .col-md-4 .col-12 .TagClouds button {
+#blogsec .col-md-4 .col-12 .TagClouds button, #blogdetail .col-md-4 .col-12 .TagClouds button {
   background-color: white;
   color: rgba(153, 153, 153, 0.8);
   border: 1px solid rgba(204, 204, 204, 0.6);
@@ -1421,17 +1426,17 @@ footer .down i {
   margin: 5px 2px;
   transition: all 0.25s;
 }
-#blog .col-md-4 .col-12 .TagClouds button:hover, #blogdetail .col-md-4 .col-12 .TagClouds button:hover {
+#blogsec .col-md-4 .col-12 .TagClouds button:hover, #blogdetail .col-md-4 .col-12 .TagClouds button:hover {
   color: white;
   background-color: #ff2020;
 }
-#blog .col-md-4 .col-12 .newsLetter input, #blogdetail .col-md-4 .col-12 .newsLetter input {
+#blogsec .col-md-4 .col-12 .newsLetter input, #blogdetail .col-md-4 .col-12 .newsLetter input {
   width: 100%;
   padding: 10px;
   outline: none;
   margin-bottom: 5px;
 }
-#blog .col-md-4 .col-12 .newsLetter button, #blogdetail .col-md-4 .col-12 .newsLetter button {
+#blogsec .col-md-4 .col-12 .newsLetter button, #blogdetail .col-md-4 .col-12 .newsLetter button {
   width: 100%;
   color: #ff2020;
   border: solid 1px #ff2020;
@@ -1439,7 +1444,7 @@ footer .down i {
   transition: all 0.25s;
   padding: 10px 0;
 }
-#blog .col-md-4 .col-12 .newsLetter button:hover, #blogdetail .col-md-4 .col-12 .newsLetter button:hover {
+#blogsec .col-md-4 .col-12 .newsLetter button:hover, #blogdetail .col-md-4 .col-12 .newsLetter button:hover {
   color: white;
   background-color: #ff2020;
 }
@@ -1449,36 +1454,36 @@ footer .down i {
     padding: 7px 0px;
     font-size: 10px;
   }
-  #blog .col-md-4 .col-12 h6, #blogdetail .col-md-4 .col-12 h6 {
+  #blogsec .col-md-4 .col-12 h6, #blogdetail .col-md-4 .col-12 h6 {
     padding-bottom: 5px;
     font-size: 16px;
     margin: 10px 0px;
   }
-  #blog .col-md-4 .col-12 .search input, #blogdetail .col-md-4 .col-12 .search input {
+  #blogsec .col-md-4 .col-12 .search input, #blogdetail .col-md-4 .col-12 .search input {
     outline: none;
     padding: 4px;
     width: 100%;
   }
-  #blog .col-md-4 .col-12 .category a, #blogdetail .col-md-4 .col-12 .category a {
+  #blogsec .col-md-4 .col-12 .category a, #blogdetail .col-md-4 .col-12 .category a {
     font-size: 13px;
     padding: 5px 0;
   }
-  #blog .col-md-4 .col-12 .recentPost a, #blogdetail .col-md-4 .col-12 .recentPost a {
+  #blogsec .col-md-4 .col-12 .recentPost a, #blogdetail .col-md-4 .col-12 .recentPost a {
     font-size: 10px;
   }
-  #blog .col-md-4 .col-12 .recentPost span, #blogdetail .col-md-4 .col-12 .recentPost span {
+  #blogsec .col-md-4 .col-12 .recentPost span, #blogdetail .col-md-4 .col-12 .recentPost span {
     font-size: 8px;
   }
-  #blog .col-md-4 .col-12 .TagClouds button, #blogdetail .col-md-4 .col-12 .TagClouds button {
+  #blogsec .col-md-4 .col-12 .TagClouds button, #blogdetail .col-md-4 .col-12 .TagClouds button {
     padding: 4px 6px;
     margin: 2px 0px;
   }
 }
 @media (max-width: 420px) {
-  #blog .nextPrevBtn, #blogdetail .nextPrevBtn {
+  #blogsec .nextPrevBtn, #blogdetail .nextPrevBtn {
     padding: 5px 0;
   }
-  #blog .nextPrevBtn i, #blog .nextPrevBtn button, #blogdetail .nextPrevBtn i, #blogdetail .nextPrevBtn button {
+  #blogsec .nextPrevBtn i, #blogsec .nextPrevBtn button, #blogdetail .nextPrevBtn i, #blogdetail .nextPrevBtn button {
     margin: 0 2px;
     font-size: 18px;
     border: solid 1px black;
@@ -1491,6 +1496,9 @@ footer .down i {
 }
 #blogdetail .col-md-8 .child {
   border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+}
+#blogdetail .col-md-8 .child .headdetail img {
+  width: 100%;
 }
 #blogdetail .col-md-8 .child .headdetail h5 {
   font-size: 25px;
@@ -1575,14 +1583,18 @@ footer .down i {
 #blogdetail .col-md-8 .child .prevnext .left:hover .forhover .onhover, #blogdetail .col-md-8 .child .prevnext .right:hover .forhover .onhover {
   opacity: 1;
 }
+#blogdetail .col-md-8 .child .authordetail {
+  text-align: center;
+}
 #blogdetail .col-md-8 .child .authordetail .row {
   background-color: #FBF9FF;
   padding: 15px;
   border-radius: 20px;
   margin: 10px 0;
 }
-#blogdetail .col-md-8 .child .authordetail .row .col-9 h6 {
+#blogdetail .col-md-8 .child .authordetail .row .col-md-9 h6 {
   margin: 0;
+  font-size: 20px;
 }
 #blogdetail .col-md-8 .child .commentsection h6 {
   font-size: 18px;
@@ -1866,6 +1878,10 @@ footer .down i {
 }
 
 @media (max-width: 700px) {
+  #sign .login, #sign .signUp {
+    width: 80%;
+    left: 10%;
+  }
   #sign .login .title, #sign .signUp .title {
     text-align: center;
     padding: 20px 0;

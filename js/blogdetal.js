@@ -100,7 +100,7 @@ for (let i=0; i<arr.length; i++){
                                                 <div class="col-lg-2">
                                                     <img src="../Images/assets/asset 7.png" alt="">
                                                 </div>
-                                                <div class="col-10">
+                                                <div class="col-lg-10">
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <p>${arr[i].body}</p>

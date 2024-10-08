@@ -5,6 +5,7 @@ body{
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 $nav1color:rgba($color: #292621 ,$alpha: .7);
 @keyframes color-damping {
     0% {
@@ -43,6 +44,12 @@ $nav1color:rgba($color: #292621 ,$alpha: .7);
         transform: translateY(0);
     }
 }
+// .addanimaion01{
+//     animation-name:down_up;
+//     animation-duration:1s;
+//     animation-delay: 0.25;
+    
+// }
 .btnred{
     color: white;
     background-color:#FF2020 ;
@@ -75,6 +82,7 @@ $nav1color:rgba($color: #292621 ,$alpha: .7);
 }
 .left5{
     left: 5%;
+    
 }
 .right5{
     right: 5%;
@@ -360,7 +368,8 @@ header{
             height: 100%;
             width: 100%;
             object-fit: cover;
-            // object-position: 70% 100%;
+            // object-position: 100% 100%;
+            object-position: 55% 100%;
         }
         .onBanner{
             position: absolute;
@@ -487,6 +496,9 @@ header{
                 opacity: 1;
             }
         }   
+        .nav3{
+            opacity: 0;
+        }
     }
 
 }
@@ -961,7 +973,7 @@ header{
             line-height: 30px;
             .left{
                 h5{
-                    font-size: 15px;
+                    font-size: 13px;
                 }
                
             }
@@ -972,8 +984,8 @@ header{
                         padding-bottom: 5px;
                     }
                     li{
-                        padding: 0 5px;
-                        font-size: 13px;
+                        padding: 0 1px;
+                        font-size: 12px;
                         font-weight: 600;
                     }
                 }
@@ -998,7 +1010,7 @@ header{
 #testimoial{
     background-color: #F3EAD8;
     height: 450px;
-    padding: 20px 50px;
+    padding: 20px 0px;
     .slider{
         color: #000;
         margin: auto;
@@ -1056,6 +1068,7 @@ header{
     }
 
 }
+
 @media (max-width: 1000px){
     #testimoial{
         .uk-panel{
@@ -1434,30 +1447,41 @@ footer{
         }
         position: relative;
         // background-color:#af6;
-        ul{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .onphoto{
             position: absolute;
-            bottom: 110px;
-            left: 60px;
-            background-color: #ddd;
-            display: none;
-            transition: all 5s;
-            li{
-                display: inline-block;
-                padding: 15px;
-                transition: background-color .5s;
+            bottom: 20%;
+            width: 100%;
+            left: 0;
+            // height: 200px;
+            ul{
 
-                &:hover{
-                    background-color: #FF2020;
-                    color: white;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                // position: absolute;
+                // bottom: 110px;
+                // left: 60px;
+                height: inherit;
+                line-height: inherit;
+                background-color: #ddd;
+                display: none;
+                transition: all 5s;
+                li{
+
+                    display: inline-block;
+                    padding: 15px;
+                    transition: background-color .5s;
+    
+                    &:hover{
+                        background-color: #FF2020;
+                        color: white;
+                    }
                 }
             }
         }
         &:hover{
             ul{
-                display: inline;
+                display: inline-block;
             }
             img{
                 transform: scale(1.1,1.1);
@@ -1548,51 +1572,56 @@ footer{
         }
     }
 }
-@media (max-width: 1400px){
-    #category {
-        .right{
-        .col-md-6{
-            ul{
-                left: 40px;
-            }
-            }
-        }
-    }
-}
-@media (max-width: 1200px){
-    #category {
-        .right{
-        .col-md-6{
 
-            ul{
-                left: 60px;
-                li{
-                    font-size: 13px;
-                    padding: 5px;
-                }
-            }
-
-            }
-        }
-    }
-}
-@media (max-width: 767px){
+@media (max-width:1200px) {
     #category {
+
         .right{
         .col-md-6{
-            ul{
-                left:135px;
-                li{
-                    font-size:25px;
-                    padding: 15px;
+            .onphoto{
+                bottom: 25%;
+                width: 90%;
+                left: 5%;
+                ul{
+                    li{
+    
+                        display: inline-block;
+                        padding: 10px;
+                        
+                    }
                 }
             }
             }
         }
     }
+    
 }
-#blog,#blogdetail{
-    background-color: #FDFDFD;
+
+@media (max-width:767px) {
+    #category {
+
+        .right{
+        .col-md-6{
+            .onphoto{
+                bottom: 25%;
+                width: 90%;
+                left: 5%;
+                ul{
+                    li{
+
+                        display: inline-block;
+                        padding: 15 20px;
+                        
+                    }
+                }
+            }
+            }
+        }
+    }
+    
+}
+#blogsec,#blogdetail{
+    // background-color: #FDFDFD;
     .title{
         margin-bottom: 30px;
         background-color: #F3EAD8;
@@ -1787,7 +1816,7 @@ footer{
         padding:7px 0px ;
         font-size: 10px;
     }
-    #blog,#blogdetail{
+    #blogsec,#blogdetail{
       .col-md-4{
         .col-12{
             h6{
@@ -1827,7 +1856,7 @@ footer{
     }
 }
 @media (max-width: 420px) {
-#blog,#blogdetail{
+#blogsec,#blogdetail{
     .nextPrevBtn{
         padding: 5px 0;
         i,button{
@@ -1847,6 +1876,9 @@ footer{
         .child{
             border-bottom: 1px solid rgba($color: #ccc, $alpha: .4);
             .headdetail{
+                img{
+                    width: 100%;
+                }
                 h5{
                     font-size: 25px;
                 }
@@ -1948,10 +1980,12 @@ footer{
 
             }
             .authordetail{
+                text-align: center;
                 .row{
-                    .col-9{
+                    .col-md-9{
                         h6{
                             margin:0;
+                            font-size: 20px;
                         }
 
                     }
@@ -2291,7 +2325,8 @@ display: none;
 @media (max-width:700px){
     #sign{
         .login,.signUp{
-
+            width:80%;
+            left: 10%;
             .title{
                 text-align:center;
                 padding: 20px 0;

@@ -86,7 +86,7 @@ if(gall2.status == 200 && gall2.readyState ==4){
 }
 
 function changePhoto(){
-    
+        console.log(bannerPhoto.src);
     if (bannerPhoto.src=="file:///D:/U/Frontend/Projects/04-Capitalshop/Images/asset%2042.jpeg"){
         bannerPhoto.src="Images/asset 43.jpeg";
         bannerPhoto.style.cssText=`object-position: 40% 100%;`;
